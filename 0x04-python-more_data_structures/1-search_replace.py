@@ -2,5 +2,5 @@
 def search_replace(my_list, search, replace):
     for i in my_list:
         if i == search:
-            my_lits.replace(i, replace)
+            my_list.replace(i, replace)
             print(my_list)
