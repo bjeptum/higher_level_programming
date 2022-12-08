@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 def number_keys(a_dictionary):
-     for i in sorted(key_value):
-         print((i, key_value[i]), end=" ")
+    count = 0
+    for i in a_dictionaty:
+        count += 1
+        return(count)
