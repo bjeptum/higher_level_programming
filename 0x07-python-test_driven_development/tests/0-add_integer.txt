@@ -7,13 +7,13 @@ Returns the sum of the Parameters
 
 First import "add_integer"
 
-        >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer = __import__('0-add_integer').add_integer
 
 Now you can use it:
 
-    Basic usage:
-        >>> add_integer(1, 2)
-        3
+Basic usage:
+    >>> add_integer(1, 2)
+    3
 
 Negative input:
     >>> add_integer(100, -2)
