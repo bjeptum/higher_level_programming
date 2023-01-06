@@ -1,5 +1,5 @@
 The 'add_integer' module
-.............
+-----------------------
 
 Parameter "b" is defaulted to int "98"
 Parameters must be type int
@@ -7,7 +7,7 @@ Returns the sum of the Parameters
 
 First import "add_integer"
 
->>> add_integer = __import__('0-add_integer').add_integer
+        >>> add_integer = __import__('0-add_integer').add_integer
 
 Now you can use it:
 
@@ -28,15 +28,13 @@ Float and negative input:
     98
 
 Float overflow:
-    >>> add_integer(1500.5)
-    1598
-
-Float NaN:
-    >>> add_integer(float('NaN'))
+    >>> a = float("inf")
+    >>> b = 10
+    >>> add_integer(a,b)
     Traceback(most recent call last):
-        ...
-    ValueError: cannot convert float NaN to integer
-
+	    ...
+    OverflowError: cannot convert float infinity to integer
+    
 String input:
     >>> add_integer(4, "School")
     Traceback(most recent call last):
@@ -57,4 +55,4 @@ Double string input:
     >>> add_integer("alx", "engineering")
     Traceback(most recent call last):
         ...
-    TypeError: a must be an integer
+    TypeError: a and b must be an integers
