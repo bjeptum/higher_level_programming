@@ -1,4 +1,3 @@
-"""
 The 'add_integer' module
 -----------------------
 
@@ -58,4 +57,3 @@ Double string input:
         ...
     TypeError: a and b must be an integers
 
-"""
