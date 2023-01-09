@@ -1,0 +1,8 @@
+The 'print_sorted' module
+-----------------------
+
+Parameters must be type int
+Returns a sorted list
+
+First import "print_sorted"
+	__import__('1-my_list').MyList
