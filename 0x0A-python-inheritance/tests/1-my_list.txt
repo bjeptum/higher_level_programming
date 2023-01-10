@@ -31,4 +31,3 @@ With a negative item:
     >>> my_list.append(-2)
     >>> my_list.print_sorted()
     [-2, 1, 3, 4, 5]
-
