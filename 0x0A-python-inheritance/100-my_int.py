@@ -3,6 +3,7 @@
 MyInt Module
 """
 
+
 class MyInt(int):
     """Inherited class MyInt"""
 
