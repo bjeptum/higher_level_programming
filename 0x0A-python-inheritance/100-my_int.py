@@ -7,7 +7,7 @@ MyInt Module
 class MyInt(int):
     """Inherited class MyInt"""
 
-    def__eq__(self, other):
+    def __eq__(self, other):
         return super().__ne__(other)
 
     def __ne__(self, other):
