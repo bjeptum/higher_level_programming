@@ -12,4 +12,3 @@ def load_from_json_file(filename):
     with open(filename, 'r') as json_f:
         json_data = json_f.read()
         return json.loads(json_data)
-
