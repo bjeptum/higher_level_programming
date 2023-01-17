@@ -10,14 +10,12 @@ from models.base import Base
 class Rectangle(Base):
     """Rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Class initializer"""
+        """Class instantiation"""
         super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
-        super(Rectangle, self).integer_validator('width', self.__width)
-        super(Rectangle, self).integer_validator('height', self.__height)
 
     @property
     def width(self):
@@ -50,10 +48,3 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         self.__y = value
-
-    def integer_validator(self, name, value):
-        """Validates a value"""
-        if type(value) != int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
