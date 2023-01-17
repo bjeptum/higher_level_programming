@@ -4,7 +4,7 @@ Rectangle module
 """
 
 
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -55,11 +55,11 @@ class Rectangle(Base):
         self.integer_validator("y", value)
         self.__y = value
 
-    def integer_validator(self, name, value, eq=True):
+    def integer_validator(self, name, value, z=True):
         """Validates a value"""
         if type(value) != int:
             raise TypeError(f"{name} must be an integer")
-        if eq and value < 0:
+        if z and value < 0:
             raise ValueError("{} must be >= 0".format(name))
-        elif not eq and value <= 0:
+        elif not z and value <= 0:
             raise ValueError("{} must be > 0".format(name))
