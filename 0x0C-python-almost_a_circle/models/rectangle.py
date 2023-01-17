@@ -12,10 +12,14 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Class instantiation"""
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
+        self.integer_validator("width", self.__width)
+        self.integer_validator("height", self.__height)
+        self.integer_validator("x", self.__x)
+        self.integer_validator("y", self.__y)
 
     @property
     def width(self):
