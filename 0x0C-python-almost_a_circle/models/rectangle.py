@@ -63,3 +63,7 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(name))
         elif not z and value <= 0:
             raise ValueError("{} must be > 0".format(name))
+
+    def area(self):
+        """Calculates area"""
+        return self.__width * self.__height
