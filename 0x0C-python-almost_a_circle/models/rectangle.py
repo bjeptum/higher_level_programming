@@ -12,10 +12,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Class instantiation"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -41,7 +41,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        self.integer_validator("x", value)
+        self.integer_validator("x", value, True)
         self.__x = value
 
     @property
@@ -50,7 +50,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.integer_validator("y", value)
+        self.integer_validator("y", value, True)
         self.__y = value
 
     def integer_validator(self, name, value, eq=True):
