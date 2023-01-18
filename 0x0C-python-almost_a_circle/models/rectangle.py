@@ -80,7 +80,7 @@ class Rectangle(Base):
         return (f'[Rectangle] ({self.id}) \
 i{self.__x}/{self.__y} - {self.__width}/{self.__height}')
 
-    def update(self, id=None, width=None, height=None, x=None, y=None):
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
         """Assigns an argument to each attribute"""
         if id is not None:
             self.id = id
@@ -92,3 +92,10 @@ i{self.__x}/{self.__y} - {self.__width}/{self.__height}')
             self.x = x
         if y is not None:
             self.y = y
+
+    def update(self, *args, **kwargs):
+        """Updates instance attributes via non-keyword & keyword args"""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
