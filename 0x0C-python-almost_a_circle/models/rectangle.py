@@ -78,4 +78,17 @@ class Rectangle(Base):
     def __str__(self):
         """Returns string representation of the object"""
         return (f'[Rectangle] ({self.id}) \
-{self.__x}/{self.__y} - {self.__width}/{self.__height}')
+i{self.__x}/{self.__y} - {self.__width}/{self.__height}')
+
+    def update(self, id=None, width=None, height=None, x=None, y=None):
+        """Assigns an argument to each attribute"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
