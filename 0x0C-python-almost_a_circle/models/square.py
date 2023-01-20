@@ -33,3 +33,23 @@ class Square(Rectangle):
         """Returns string representation of the object"""
         return ('[{}] ({}) {}/{} - {}'.format(self.__class__.__name__,
                 self.id, self.x, self.y, self.width))
+
+    def update(self, *args, **kwargs):
+        """Updates instance attributes via non-keyword & keyword args"""
+        original = [self.id, self.size, self.x, self.y]
+        if args:
+            new_args = list(args[:len(args)]) + original[len(args):]
+        if not args:
+            parsed_kwargs = [
+                    kwargs.get('id'),
+                    kwargs.get('size'),
+                    kwargs.get('x'),
+                    kwargs.get('y')
+                    ]
+            new_args = [
+                    parsed_kwargs[i] if parsed_kwargs[i] is not None
+                    else original[i]
+                    for i in range(len(original))
+                    ]
+            if args or kwargs:
+                (self.id, self.size, self.x, self.y) = new_args
