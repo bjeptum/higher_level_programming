@@ -63,10 +63,10 @@ class Base:
         elem = []
         with open(filename, "r") as rfile:
             text = rfile.read()
-        text = cls.from_json_string(text)
+        text = from_json_string(text)
         for item in text:
             if type(item) == dict:
-                elem.append(cls.create(**item))
+                elem.append(create(**item))
             else:
                 elem.append(item)
         return elem
@@ -92,5 +92,5 @@ class Base:
             for item in read_from:
                 for key, value in dict(item).items:
                     elem_dict(key) = int(value)
-                elem.appemd(cls.create(**elem_dict))
+                elem.append(create(**elem_dict))
         return elem
