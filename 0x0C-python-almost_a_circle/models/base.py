@@ -29,7 +29,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """JSON string to file"""
-        filename = type(list_objs[0]).__name__ + ".json"
+        filename = cls.__name__ + ".json"
         json_attrs = []
         if list_objs is not None:
             for i in range(len(list_objs)):
