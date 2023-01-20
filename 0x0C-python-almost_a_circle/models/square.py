@@ -51,5 +51,5 @@ class Square(Rectangle):
                     else original[i]
                     for i in range(len(original))
                     ]
-            if args or kwargs:
+        if args or kwargs:
                 (self.id, self.size, self.x, self.y) = new_args
