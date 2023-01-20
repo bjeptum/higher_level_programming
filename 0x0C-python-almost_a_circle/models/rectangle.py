@@ -71,14 +71,14 @@ class Rectangle(Base):
     def display(self):
         """Prints in stdout the Rectangle instance with the character #"""
         for i in range(self.y):
-            print('$')
+            print()
         for i in range(self.height):
-            print(" " * self.x + "".join(["#" for j in range(self.width)]))
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """Returns string representation of the object"""
         return (f'[Rectangle] ({self.id}) \
-i{self.__x}/{self.__y} - {self.__width}/{self.__height}')
+{self.__x}/{self.__y} - {self.__width}/{self.__height}')
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
         """Assigns an argument to each attribute"""
