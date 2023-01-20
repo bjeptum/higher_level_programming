@@ -64,6 +64,6 @@ class Base:
                 """string of list of dictionaries"""
                 json_string = o_file.read()
                 for json_string in json.loads(json_string):
-                    [cls.from_json_string(json_string)]
+                    return [cls.from_json_string(json_string)]
             except:
                 return []
