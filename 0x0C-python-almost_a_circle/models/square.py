@@ -52,4 +52,4 @@ class Square(Rectangle):
                     for i in range(len(original))
                     ]
         if args or kwargs:
-                (self.id, self.size, self.x, self.y) = new_args
+            (self.id, self.size, self.x, self.y) = new_args
