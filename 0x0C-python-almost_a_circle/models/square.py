@@ -13,6 +13,17 @@ class Square(Rectangle):
         """Class instantiation"""
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """Returns size of one side of square"""
+        return super().width(size)
+
+    @size.setter
+    def size(self, value):
+        """Returns size of one side of square"""
+        self.width = value
+        self.height = value
+
     def area(self):
         """Returns area of the square"""
         a = pow(self.width, 2)
