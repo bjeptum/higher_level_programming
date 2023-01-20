@@ -2,8 +2,6 @@
 """
 Base module
 """
-
-
 import json
 import csv
 
@@ -59,14 +57,14 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Returns a list of instances"""
-        filename = cls.__name + ".json"
+        filename = ((cls.__name__) + ".json")
         elem = []
-        with open(filename, "r") as rfile:
+        with open(filename, 'r') as rfile:
             text = rfile.read()
-        text = from_json_string(text)
+        text = cls.from_json_string(text)
         for item in text:
             if type(item) == dict:
-                elem.append(create(**item))
+                elem.append(cls.create(**item))
             else:
                 elem.append(item)
         return elem
@@ -75,8 +73,8 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """Saves to a CSV File"""
         elem = [item.to_dictionary() for item in list_objs]
-        filename = cls.__name + ".csv"
-        with open(filename, "w") as savefile:
+        filename = (cls.__name__) + ".csv"
+        with open(filename, 'w') as save_file:
             write_to = csv.DictWriter(save_file, elem[0].keys())
             write_to.writeheader()
             write_to.writerows(elem)
@@ -85,12 +83,12 @@ class Base:
     def load_from_file_csv(cls):
         """Loads from a CSV file"""
         elem = []
-        elem.dict = {]
-        filename = cls.__name + ".csv"
-        with open(filename. "r") as rfile:
+        elem_dict = []
+        filename = (cls.__name__) + ".csv"
+        with open(filename, 'r') as read_file:
             read_from = csv.DictReader(read_file)
             for item in read_from:
                 for key, value in dict(item).items:
-                    elem_dict(key) = int(value)
+                    elem_dict(key)
                 elem.append(create(**elem_dict))
         return elem
