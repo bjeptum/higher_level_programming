@@ -64,15 +64,15 @@ class Base:
         with open(filename, "r") as rfile:
             text = rfile.read()
         text = cls.from_json_string(text)
-        for i in text:
+        for item in text:
             if type(item) == dict:
-                elem.append(cls.create(**i))
+                elem.append(cls.create(**item))
             else:
-                elem.append(i)
+                elem.append(item)
         return elem
 
     @classmethod
-    def save_to_filw_csv(cls, list_objs):
+    def save_to_file_csv(cls, list_objs):
         """Saves to a CSV File"""
         elem = [item.to_dictionary() for item in list_objs]
         filename = cls.__name + ".csv"
