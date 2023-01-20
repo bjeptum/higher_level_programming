@@ -36,3 +36,11 @@ class Base:
                 json_attrs.append(cls.to_dictionary(list_objs[i]))
         with open(filename, 'w') as ofile:
             return ofile.write(cls.to_json_string(json_attrs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string"""
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
