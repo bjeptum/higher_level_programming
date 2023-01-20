@@ -17,7 +17,3 @@ class Square(Rectangle):
         """Returns area of the square"""
         a = pow(self.width, 2)
         return a
-
-    def __str__(self):
-        """Returns string representation of the object"""
-        return (f'[Square] ({self.id}) {self.x} / {self.y} - {self.width}')
