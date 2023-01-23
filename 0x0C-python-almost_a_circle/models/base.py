@@ -84,7 +84,7 @@ class Base:
                                     obj.height, obj.x, obj.y])
             elif cls.__name__ == "Square":
                 for obj in list_objs:
-                    writer.writerow([obj.id, obj.size])
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
     @classmethod
     def load_from_file_csv(cls):
@@ -98,7 +98,7 @@ class Base:
                                      int(row[4]), int(row[0]))
                                  for row in reader]
                 elif cls.__name__ == "Square":
-                    list_objs = [cls(int(row[1]),
+                    list_objs = [cls(int(row[1]), int(row[2]), int(row[3]),
                                      int(row[0])) for row in reader]
                 return list_objs
         except FileNotFoundError:
