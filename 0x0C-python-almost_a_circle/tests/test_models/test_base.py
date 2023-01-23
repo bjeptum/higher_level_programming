@@ -11,22 +11,6 @@ import json
 from models.base import Base
 
 
-class TestBaseDocs(unittest.TestCase):
-    """Veriffies Base module documentation"""
-    @classmethod
-    def setUpClass(cls):
-        """Set the doc tests"""
-        cls.base_funcs = inspect.getmembers(Base, inspect.isfunction)
-
-    def pep8_test(self):
-        """Check compliance to PEP8 and documentation"""
-        style = pep8.StyleGuide(quiet=True)
-        style.options.max_line_length = 100
-        check = style.check_files(['models/base.py'])
-        self.assertEqual(check.total_errors, 0,
-                         'PEP8 style errors: %d' % check.total_errors)
-
-
 class TestBase(unittest.TestCase):
     """Working of the Base Class"""
     def test_id_none(self):
