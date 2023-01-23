@@ -75,23 +75,31 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Saves to a CSV File"""
-        elem = [item.to_dictionary() for item in list_objs]
         filename = (cls.__name__) + ".csv"
         with open(filename, 'w') as save_file:
-            write_to = csv.DictWriter(save_file, elem[0].keys())
-            write_to.writeheader()
-            write_to.writerows(elem)
+            writer = csv.writer(save_file)
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.width,
+                                    obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size])
 
     @classmethod
     def load_from_file_csv(cls):
         """Loads from a CSV file"""
-        elem = []
-        elem_dict = []
         filename = (cls.__name__) + ".csv"
-        with open(filename, 'r') as read_file:
-            read_from = csv.DictReader(read_file)
-            for item in read_from:
-                for key, value in dict.items(item):
-                    elem_dict(key)
-                elem.append(create(**elem_dict))
-        return elem
+        try:
+            with open(filename, 'r') as read_file:
+                reader = csv.reader(read_file)
+                if cls.__name__ == "Rectangle":
+                    list_objs = [cls(int(row[0]), int(row[1]), int(row[2]),
+                                     int(row[3]), int(row[4]))
+                                 for row in reader]
+                elif cls.__name__ == "Square":
+                    list_objs = [cls(int(row[0]),
+                                     int(row[1])) for row in reader]
+                return list_objs
+        except FileNotFoundError:
+            return []
