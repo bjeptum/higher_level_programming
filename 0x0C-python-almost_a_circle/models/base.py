@@ -94,12 +94,12 @@ class Base:
             with open(filename, 'r') as read_file:
                 reader = csv.reader(read_file)
                 if cls.__name__ == "Rectangle":
-                    list_objs = [cls(int(row[0]), int(row[1]), int(row[2]),
-                                     int(row[3]), int(row[4]))
+                    list_objs = [cls(int(row[1]), int(row[2]), int(row[3]),
+                                     int(row[4]), int(row[0]))
                                  for row in reader]
                 elif cls.__name__ == "Square":
-                    list_objs = [cls(int(row[0]),
-                                     int(row[1])) for row in reader]
+                    list_objs = [cls(int(row[1]),
+                                     int(row[0])) for row in reader]
                 return list_objs
         except FileNotFoundError:
             return []
