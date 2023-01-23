@@ -59,15 +59,18 @@ class Base:
         """Returns a list of instances"""
         filename = ((cls.__name__) + ".json")
         elem = []
-        with open(filename, 'r') as rfile:
-            text = rfile.read()
-        text = cls.from_json_string(text)
-        for item in text:
-            if type(item) == dict:
-                elem.append(cls.create(**item))
-            else:
-                elem.append(item)
-        return elem
+        try:
+            with open(filename, 'r') as rfile:
+                text = rfile.read()
+            text = cls.from_json_string(text)
+            for item in text:
+                if type(item) == dict:
+                    elem.append(cls.create(**item))
+                else:
+                    elem.append(item)
+            return elem
+        except FileNotFoundError:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -88,7 +91,7 @@ class Base:
         with open(filename, 'r') as read_file:
             read_from = csv.DictReader(read_file)
             for item in read_from:
-                for key, value in dict(item).items:
+                for key, value in dict.items(item):
                     elem_dict(key)
                 elem.append(create(**elem_dict))
         return elem
