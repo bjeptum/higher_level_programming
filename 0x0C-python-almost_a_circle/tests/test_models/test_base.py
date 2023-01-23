@@ -5,6 +5,7 @@
 import unittest
 import inspect
 import pep8
+import json
 
 
 from models.base import Base
