@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Compiling $PYFILE ..."
+OUTPUT_FILE="$PYFILE"c
+python3 -m py_compile "$PYFILE"
