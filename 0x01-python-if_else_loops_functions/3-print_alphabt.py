@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-print(''.join([chr(i) for i in range(97,
-123) if chr(i) not in ['q', 'e']]), end='')
+for i in range(97, 123):
+    if i != 113 or 101:
+        print(("{}".format(chr(i))), end="")
