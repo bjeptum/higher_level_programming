@@ -1,2 +1,1 @@
-This project covers Python - if/else, loops, functions
-
+This project covers Python - if/else, loops, functions: LEARNING OBJECTIVES:
