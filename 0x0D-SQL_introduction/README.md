@@ -1,7 +1,8 @@
 #**0x0D. SQL - Introduction**
 
 The project covers introduction to SQL and concepts on Databases
- *Learning Objectives:*
+
+*Learning Objectives:*
 
  - What’s a database
  - What’s a relational database
