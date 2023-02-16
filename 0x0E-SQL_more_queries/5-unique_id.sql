@@ -1,4 +1,4 @@
 -- Creates the table unique_id --
 CREATE TABLE IF NOT EXISTS unique_idl(
-    DISTINCT id INTEGER DEFAULT 1,
+    id INTEGER DEFAULT 1 UNIQUE,
     name VARCHAR(256));
