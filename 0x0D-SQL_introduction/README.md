@@ -2,6 +2,11 @@
 
 The project covers introduction to SQL and concepts on Databases
 
+**Prerequisites**
+
+In order to follow throught, the project one has to have access to a MySQL database,
+which is installed on a virtual private server running Ubuntu 20.04.
+
 *Learning Objectives:*
 
  - What’s a database
