@@ -1,6 +1,6 @@
 -- Lists all shows contained that have at least one genre linked --
-SELECT t.tittle, g.genre_id
-FROM tv_shows AS t
-INNER JOIN tv_show_genres AS g
-ON t.id = g.show_id
-ORDER BY t.tittle, g.genre_id ASC;
+SELECT tv_shows.title, tv_show_genres.genre_id
+FROM tv_shows
+INNER JOIN tv_show_genres
+ON tv_shows.id = tv_show_genres.show_id
+ORDER BY tv_shows.genre_id ASC;
