@@ -5,8 +5,12 @@
 const process = require('process');
 const args = process.argv;
 const num = parseInt(args[2]);
-for ( let i = 0; i < num; i++) {
-  console.log('C is fun' * i);
-} else {
+if (isNaN(num)) {
   console.log('Missing number of occurrences');
+} else {
+  let i = 0;
+  while (i < num) {
+    console.log('C is fun');
+    i++;
+  }
 }
