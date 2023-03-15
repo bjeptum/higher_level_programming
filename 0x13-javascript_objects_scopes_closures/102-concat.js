@@ -17,5 +17,3 @@ const data2 = fs.readFileSync(sourceFile2, 'utf8');
 const concatenatedData = data1 + data2;
 
 fs.writeFileSync(destinationFile, concatenatedData);
-
-console.log(`Files ${sourceFile1} and ${sourceFile2} have been concatenated and written to ${destinationFile}`);
