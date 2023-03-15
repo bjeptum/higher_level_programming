@@ -26,6 +26,8 @@ Requirements:
 * You are not allowed to use var **
 
 Tasks
+
+
 0. Rectangle #0
 
 0-rectangle.js: JavaScript script that defines an empty class Rectangle.
