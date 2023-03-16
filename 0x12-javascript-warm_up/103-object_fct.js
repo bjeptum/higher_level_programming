@@ -7,7 +7,7 @@ console.log(myObject);
 /*
 Incrementing the integer value
 */
-myObject.incr = function incr () {
+myObject.incr = function () {
   this.value++;
 };
 
