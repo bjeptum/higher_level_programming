@@ -4,9 +4,6 @@
  Function must be visible from outside
 */
 function addFunction (number, theFunction) {
-  if (number <= 0) {
-    return;
-  }
   number++;
   theFunction(number);
 }
