@@ -13,8 +13,7 @@ from sys import argv
 if __name__ == "__main__":
 
     # connect to the database
-    db = MySQLdb.connect(host="localhost",
-                         user=argv[1],
+    db = MySQLdb.connect(user=argv[1],
                          password=argv[2],
                          port=3306,
                          db=argv[3])
