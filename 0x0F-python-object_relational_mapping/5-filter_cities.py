@@ -25,14 +25,19 @@ if __name__ == "__main__":
     # lists all cities
     user_input = argv[4]
     query = "SELECT cities.name \
-             FROM cities \
-             INNER JOIN states ON cities.state_id = states.id \
-             WHERE states.name LIKE '%{}%'"
+            FROM cities \
+            INNER JOIN states ON cities.state_id = states.id \
+            WHERE states.name LIKE '%{}%'"
 
     cur.execute(query.format(user_input))
+    cities = cur.fetchall()
 
-    for row in cur.fetchall():
-        print(row)
+    comp_list = []
+    for city in cities:
+        comp_list += city
+
+    comp_list = ", ".join(comp_list)
+    print(comp_list)
 
     cur.close()
     db.close()
