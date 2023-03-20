@@ -10,7 +10,6 @@ Uses the module SQLAlchemy
 from sqlalchemy import Column, Integer, String, create_engine, MetaData
 from sqlalchemy.engine import result
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.exc import NoResultFound
 from sys import argv
 from model_state import Base, State
 
@@ -30,10 +29,12 @@ if __name__ == '__main__':
     session = Session()
 
     # Query the database for first state object in db
-    try:
-        first_state = session.query(State).first()
-    except NoResultFound:
-        print("Nothing")
+    first_state = session.query(State).first()
 
     # Print the results
-    print(f"{first_state.id}: {first_state.name}")
+    if first_state is None:
+        print("Nothing")
+    else:
+        print(f"{first_state.id}: {first_state.name}")
+
+    session.close()
