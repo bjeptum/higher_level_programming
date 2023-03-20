@@ -10,6 +10,7 @@ Uses the module SQLAlchemy
 from sqlalchemy import Column, Integer, String, create_engine, MetaData
 from sqlalchemy.engine import result
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm.exc import NoResultFound
 from sys import argv
 from model_state import Base, State
 
