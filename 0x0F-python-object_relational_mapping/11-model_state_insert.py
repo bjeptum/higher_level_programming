@@ -9,8 +9,6 @@ Uses the module SQLAlchemy
 from sqlalchemy import Column, Integer, String, create_engine, MetaData
 from sqlalchemy.engine import result
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy.orm.exc import MultipleResultsFound
 from sys import argv
 from model_state import Base, State
 
@@ -31,14 +29,8 @@ if __name__ == '__main__':
 
     # Add Louisiana to database
     new_state = State(name="Louisiana")
-    def save_to_db(record):
-        try:
-            session.add(new_state)
-            session.commit()
-        except MultipleResultsFound as e:
-            print(e)
-        except NoResultFound as e:
-            print(e)
+    session.add(new_state)
+    session.commit()
 
     # Query the database with newly added state
     states = session.query(State).order_by(State.id)
