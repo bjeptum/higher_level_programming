@@ -9,7 +9,7 @@ Uses the module sqlalchemy
 from sqlalchemy import Column, Integer, String, create_engine, MetaData
 from sqlalchemy.engine import result
 from sqlalchemy import update
-from sqlalchemy.orm  import sessionmaker
+from sqlalchemy.orm import sessionmaker
 from sys import argv
 from model_state import Base, State
 
