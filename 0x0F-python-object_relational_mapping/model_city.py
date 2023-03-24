@@ -9,7 +9,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, create_engine, ForeignKey
 from sqlalchemy.orm import relationship
 from sys import argv
-from model_state import Base, State
+from model_state import Base
+from model_state import State
 
 Base = declarative_base()
 
