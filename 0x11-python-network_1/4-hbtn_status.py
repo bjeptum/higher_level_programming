@@ -12,8 +12,8 @@ import requests
 if __name__ == '__main__':
 
     r = requests.get('https://alx-intranet.hbtn.io/status')
-    body_type = type(r.content)
     body = r.content.decode()
+    body_type = type(body)
 
     print("Body response:")
     print(f"\t- type: {body_type}")
