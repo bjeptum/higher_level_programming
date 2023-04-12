@@ -14,7 +14,7 @@
  - What are indexing and slicing in Python
  - What is the official Python coding style and how to check your code with pycodestyle
 
- # The description of the files is  as follows:
+ ## The description of the files is  as follows:
 
 |Filenames | Description |
 | ------------- | ------------- |
@@ -31,11 +31,3 @@
 |11)[100-write.py](https://github.com/bjeptum/alx-higher_level_programming/blob/master/0x00-python-hello_world/100-write.py)|Print string using write from sys module|
 |12)[101-compile](https://github.com/bjeptum/alx-higher_level_programming/blob/master/0x00-python-hello_world/101-compile) | Compiles a Python script file stored in $PYFILE variable|
 |13)[102-magic_calculation.py](https://github.com/bjeptum/alx-higher_level_programming/blob/master/0x00-python-hello_world/102-magic_calculation.py) | Python function that works exactly as the given sample Python bytecode|
-
- # Sample Bytecode for 102-magic_calculation.py file:
-  3           0 LOAD_CONST               1 (98)
-              3 LOAD_FAST                0 (a)
-              6 LOAD_FAST                1 (b)
-              9 BINARY_POWER
-             10 BINARY_ADD
-             11 RETURN_VALUE
