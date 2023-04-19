@@ -19,16 +19,10 @@ This repo contains higher level programming languages and projects learned at [A
 11) [0x0A-python-inheritance](https://github.com/bjeptum/alx-higher_level_programming/tree/master/0x0A-python-inheritance)
 12) [0x0B-python-input_output](https://github.com/bjeptum/alx-higher_level_programming/tree/master/0x0B-python-input_output)
 13) [0x0C-python-almost_a_circle](https://github.com/bjeptum/alx-higher_level_programming/tree/master/0x0C-python-almost_a_circle)
-14) [0x0D-SQL_introduction](https://github.com/bjeptum/alx-higher_level_programming/tree/master/0x0D-SQL_introduction)
-15) [0x0E-SQL_more_queries](https://github.com/bjeptum/alx-higher_level_programming/tree/master/0x0E-SQL_more_queries)
-16) [0x0F-python-object_relational_mapping](https://github.com/bjeptum/alx-higher_level_programming/tree/master/0x0F-python-object_relational_mapping)
-17) [0x10-python-network_0](https://github.com/bjeptum/alx-higher_level_programming/tree/master/0x10-python-network_0)
 
 
 ## Languages
 - Python
-- JavaScript
-- SQL
 
 ## Authors
 [Jeptum Brenda](https://github.com/bjeptum)
