@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def simple_delete(a_dictionary, key=""):
+    """Deletes a key in a dictionary"""
     if key in a_dictionary:
         del a_dictionary[key]
-        return a_dictionary
+    return a_dictionary
 
 
 def print_sorted_dictionary(a_dictionary):
