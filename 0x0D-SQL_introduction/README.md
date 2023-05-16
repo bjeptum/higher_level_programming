@@ -4,10 +4,10 @@
 
  ## *Prerequisites*:
 
-In order to follow throught, the project one has to have access to a MySQL database,
+In order to follow through the project one has to have access to a MySQL database,
 which is installed on a virtual private server running Ubuntu 20.04.
 
-I had to start MySQL before playong with it as follows:
+I had to start MySQL before playing with it as follows:
 
 ```
 $ service mysql start
@@ -27,6 +27,7 @@ $ service mysql start
  - How to INSERT, UPDATE or DELETE data
  - What are subqueries
  - How to use MySQL functions
+
  ## The description of the files is  as follows:
 
 |Filenames | Description |
