@@ -1,4 +1,4 @@
--- Shows shows by genre-id --
+-- Retrieve shows by genre-id --
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_show_genres
 RIGHT JOIN tv_shows
