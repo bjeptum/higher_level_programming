@@ -4,10 +4,10 @@ const process = require('process');
 const myArgs = process.argv;
 let len = 0;
 myArgs.forEach((item) => {
-	len++;
+  len++;
 });
 if (len <= 2) {
-	console.log('No argument');
+  console.log('No argument');
 } else {
-	console.log(myArgs[2]);
+  console.log(myArgs[2]);
 }
