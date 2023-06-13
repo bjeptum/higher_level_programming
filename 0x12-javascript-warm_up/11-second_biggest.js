@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Searches for second biggest integr in the list of arguments
+// Searches for second biggest integer in the list of arguments
 const process = require('process');
 const args = process.argv.slice(2);
 function secondBiggest (args) {
@@ -7,10 +7,10 @@ function secondBiggest (args) {
   if (n < 2) {
     return 0;
   }
-  args.sort();
+  args.sort((a, b) => parseInt(b) - parseInt(a));
   let i;
-  for (i = n - 2; i >= 0; i--) {
-    if (args[i] !== args[n - 1]) {
+  for (i = 1; i < n; i++) {
+    if (args[i] !== args[0]) {
       return args[i];
     }
   }
