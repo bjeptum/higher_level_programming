@@ -1,6 +1,5 @@
 #!/usr/bin/node
 // Prints the addition of 2 integers
-// Prints x times C is fun
 const process = require('process');
 const args = process.argv;
 const n1 = parseInt(args[2]);
