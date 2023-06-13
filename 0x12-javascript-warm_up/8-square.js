@@ -4,7 +4,7 @@ const process = require('process');
 const args = process.argv;
 const x = parseInt(args[2]);
 if (isNaN(x)) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 } else {
   let str = '';
   for (let i = 0; i < x; i++) {
