@@ -11,6 +11,7 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
+
     # Connecting to hbtn_0e_0_usa d
     db = MySQLdb.connect(host="localhost",
                          user=argv[1], passwd=argv[2],
