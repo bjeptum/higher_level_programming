@@ -20,8 +20,9 @@ if __name__ == "__main__":
     curx = db.cursor()
     # Query data as per user input
     u_input = argv[4]
-    query = ("SELECT * FROM states WHERE name LIKE '%{}%' ORDER BY id ASC")
-    curx.execute(query.format(u_input))
+    query = ("SELECT * FROM states WHERE name LIKE '%{}%'
+             ORDER BY id ASC".format(u_input))
+    curx.execute(query)
     rows = curx.fetchall()
     for row in rows:
         print(row)
