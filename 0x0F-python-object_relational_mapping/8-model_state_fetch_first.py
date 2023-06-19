@@ -1,4 +1,4 @@
-#!/usr/biin/python3
+#!/usr/bin/python3
 """
 Returns the first state object from database
 """
