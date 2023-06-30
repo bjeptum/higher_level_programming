@@ -1,3 +1,3 @@
 #!/bin/bash
 # Display all the methods server accepts
-curl -s --head "$1"
+curl -sI "$1" | grep -i allow | awk '{print $2}'
