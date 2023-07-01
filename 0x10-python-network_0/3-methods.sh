@@ -1,4 +1,3 @@
 #!/bin/bash
-# Display all the methods server accepts
-curl -sI -X OPTIONS "$1" | grep "Allow" | cut -d " " -f 2-
-
+# Displays all the methods server accepts
+curl -sI -X OPTIONS "$1" | awk -F ": " '/Allow/ {print $2}'
