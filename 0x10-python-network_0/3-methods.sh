@@ -1,3 +1,4 @@
 #!/bin/bash
 # Display all the methods server accepts
-curl -sI "$1" | awk '/Allow/{gsub(/,/,"\n"); print substr($0, index($0,$2))}' | awk 'NR>1'
+curl -sI -X OPTIONS "$1" | grep "Allow" | cut -d " " -f 2-
+
