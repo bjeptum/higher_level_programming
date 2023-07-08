@@ -16,6 +16,7 @@ if __name__ == '__main__':
         resp = requests.get(url)
         resp.raise_for_status()
     except requests.exceptions.HTTPError as e:
-        print(f"Error code: {e.args[0]}")
+        code = e.response.status_code
+        print(f"Error code: {code}")
     else:
         print(resp.content.decode('utf-8'))
