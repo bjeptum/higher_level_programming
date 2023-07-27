@@ -1,3 +1,3 @@
 #!/bin/bash
-# Display all the methods server accepts
-curl -sI "$1" | awk '/Allow/{gsub(/,/,"\n"); print substr($0, index($0,$2))}' | awk 'NR>1'
+# Displays all the methods server accepts
+curl -sI -X OPTIONS "$1" | awk -F ": " '/Allow/ {print $2}'
