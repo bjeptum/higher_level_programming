@@ -16,11 +16,15 @@ function getUsersWithCompletedTasks (url) {
     const usersCompletedTasks = {};
 
     // Count completed tasks for each user ID
-    todos.forEach(({userId, completed }) => {
-      if (completed) {
-		  usersCompletedTasks[userId] = (usersCompletedTasks[userId] || 0) + 1;
-	  }
-	});
+    todos.forEach((todo) => {
+      if (todo.completed) {
+        if (!usersCompletedTasks[todo.userId]) {
+          usersCompletedTasks[todo.userId] = 1;
+        } else {
+          usersCompletedTasks[todo.userId]++;
+        }
+      }
+    });
     console.log(usersCompletedTasks);
   });
 }
