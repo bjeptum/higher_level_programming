@@ -22,19 +22,29 @@ request(url, (error, response, body) => {
       process.exit(1);
     }
 
-    // Print characters fro the movie
-    const characters = movie.characters;
-    for (const characterUrl of characters) {
-      request(characterUrl, (charError, charResponse, charBody) => {
-        if (charError) {
-          console.error(charError);
-          return;
-        }
-        if (charResponse.statusCode === 200) {
-          const character = JSON.parse(charBody);
-          console.log(character.name);
-        }
+    // Print characters from the movie
+	const characters = movie.characters;
+	const promises = characters.map(characterUrl => {
+		return new Promise((resolve, reject) => {
+			request(characterUrl, (charError, charResponse, charBody) => {
+				if (charError) {
+					reject(charError);
+					return;
+				}
+			if (charResponse.statusCode === 200) {
+				const character = JSON.parse(charBody);
+				resolve(character.name);
+			}
+			});
+		});
+	});
+    
+    Promise.all(promises)
+      .then(names => {
+		  names.forEach(name => console.log(name));
+      })
+      .catch(error => {
+        console.error(error);
       });
-    }
   }
 });
